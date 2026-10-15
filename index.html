@@ -105,10 +105,13 @@ const response = await fetch("https://kristel-ai-server.sylvesterhermans2014.wor
     if (!data.reply) throw new Error("Geen antwoord ontvangen");
     bericht(data.reply, "bot");
     statusTekst.textContent = "Verbonden met Kristel AI 💗";
+ 
   } catch (error) {
     bericht(
-      "Ik ben nog niet verbonden met de echte AI. 💗 " +
-      "De veilige AI-verbinding moet eerst worden ingesteld.",
+      "Oeps! Er ging iets mis: " + error.message,
+      "bot"
+    );
+    statusTekst.textContent = "Verbindingsfout";
       "bot"
     );
     statusTekst.textContent = "De AI-verbinding wordt nog ingesteld.";
