@@ -92,7 +92,8 @@ form.addEventListener("submit", async function(e) {
   statusTekst.textContent = "Even wachten...";
 
   try {
-    const response = await fetch("/api/chat", {
+   
+const response = await fetch("https://kristel-ai-server.sylvesterhermans2014.workers.dev/api/chat", {
       method: "POST",
       headers: {"Content-Type": "application/json"},
       body: JSON.stringify({message: tekst})
